@@ -1,4 +1,5 @@
 import './style.scss';
 import 'bootstrap';
+import app from './modules/program.js';
 
-console.log('haha');
+app();
