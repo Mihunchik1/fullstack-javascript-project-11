@@ -1,4 +1,5 @@
 import onChange from 'on-change';
+import i18nextInstance from './locales/initInternationalization.js';
 
 export default (state) => {
   const render = () => {
@@ -8,19 +9,19 @@ export default (state) => {
 
     const status = {
       alreadyExist: () => {
-        text = 'RSS уже существует';
+        text = i18nextInstance.t('validate.alreadyExistUrl');
         errorMessage.classList.remove('text-success');
         errorMessage.classList.add('text-danger');
         input.classList.add('is-invalid');
       },
       invalid: () => {
-        text = 'Ссылка должна быть валидным URL';
+        text = i18nextInstance.t('validate.invalidUrl');
         errorMessage.classList.remove('text-success');
         errorMessage.classList.add('text-danger');
         input.classList.add('is-invalid');
       },
       valid: () => {
-        text = 'RSS успешно загружен';
+        text = i18nextInstance.t('validate.validUrl');
         errorMessage.classList.remove('text-danger');
         errorMessage.classList.add('text-success');
         input.classList.remove('is-invalid');
